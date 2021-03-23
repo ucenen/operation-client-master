@@ -1,0 +1,16 @@
+<text class="text1">
+    尊敬的客户，请您耐心按指示操作，便于我们给您配置权限。
+    步骤：
+    1.复制当前的openid文本
+    2.通过微信或手机短信等方式，将文本发送给我方人员
+  </text>
+<view class="view1">
+  <view class="input1">
+    <text>openid:</text>
+    <input type="text" disabled value="{{openid}}"></input>
+  </view>
+
+  <button class="buttom1" bindtap='copyText' data-text="{{openid}}">复制openid</button>
+  
+  
+</view>

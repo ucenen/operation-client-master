@@ -1,0 +1,30 @@
+
+<van-collapse value="{{ activeNames }}" bind:change="onChange" accordion>
+  
+  <van-collapse-item wx:for="{{data_list}}" name="{{index}}"  wx:key="sss">
+    <view slot="title">
+      <view style="width:100%;">
+        <text>{{item.mtTime}}</text>
+        <text style="margin-left:20rpx;color:blue;" wx:if="{{item.isRegular == 0}}">未巡检</text>
+        <text style="margin-left:20rpx;color:green;" wx:if="{{item.isRegular == 1}}">不合格</text>
+        <text style="margin-left:20rpx;color:red;" wx:if="{{item.isRegular == 2}}">合格</text>
+      </view>
+    </view>
+ 
+    <view>     
+      <van-cell title="时间" value="{{item.mtTime}}" />
+      <van-cell title="类型(清洁/补料)" value="{{item.mtType == 0 ? '补料':'清洁'}}" />
+      <van-cell title="内容" value="" border="{{false}}" />
+      <view style="width:93%;height:auto;margin-left:3.5%;line-height:80rpx;border-bottom:1px solid #eee;">
+          <text>{{item.mtContent}}</text>         
+      </view>
+      <van-cell title="设备编号" value="{{item.eqNumber}}" />
+      <van-cell title="设备地址" value="{{item.eqAddress}}" />   
+      <van-cell title="运维人员" value="{{item.operator}}" /> 
+      <van-cell title="运维人员电话" value="{{item.operatorPhone}}" /> 
+      <van-cell wx:if="{{item.isRegular == 1}}" title="不合格原因" value="{{item.inspectionRemark}}" />   
+      <view wx:if="{{item.isRegular == 0 && info[0].status}}" class="view2" data-item="{{item}}" catchtap="openpage" data-url="../operational/operational">巡检</view>
+    </view>
+  </van-collapse-item>
+
+</van-collapse>

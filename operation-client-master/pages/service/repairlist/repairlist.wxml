@@ -1,0 +1,177 @@
+<van-tabs active="{{ active }}" bind:change="onChange" color="#64c3c7">
+  <van-tab title="待维修">
+      <view style="wdith:100%;height:60rpx;font-size:24rpx;margin-top:10rpx;">
+        <text style="color:#9f9f9f;line-height:60rpx;margin-left:3%;">总计<text style="color:#000000;padding-left:10rpx;padding-right:10rpx;">{{page_data[active].data.length}}</text> 条</text>
+      </view>
+      <view class="view1" wx:for="{{page_data[active].data}}" wx:key="">
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">设备编号</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.eqNumber}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">设备地址</text>
+          <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.eqAddress}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">故障内容</text>
+          <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.errorContext}}</text>
+          <!-- <text style="margin-right:20rpx;color:#64c3c7;">{{item.errorContext}}</text> -->
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">故障发生时间</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.errorTime}}</text>
+        </view>
+        <view style="width:100%;height:120rpx;" class="view_item_center">
+            <view class="view_center view2" style="margin-left:30rpx;" data-item="{{item}}" catchtap="openpopup">进行维修</view>
+            <view class="view_center view2" style="margin-right:30rpx;" data-item="{{item}}" catchtap="openpopup_chexiao">撤销维修</view>
+        </view>
+      </view>
+
+  </van-tab>
+  <van-tab title="维修中">
+     <view style="wdith:100%;height:60rpx;font-size:24rpx;margin-top:10rpx;">
+         <text style="color:#9f9f9f;line-height:60rpx;margin-left:3%;">总计<text style="color:#000000;padding-left:10rpx;padding-right:10rpx;">{{page_data[active].data.length}}</text> 条</text>
+      </view>
+      <view class="view1" wx:for="{{page_data[active].data}}" wx:key="">
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">设备编号</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.eqNumber}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">设备地址</text>
+           <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.eqAddress}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">故障内容</text>
+          <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.errorContext}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">故障发生时间</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.errorTime}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">维修开始时间</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.repairBeginTime}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">维修内容</text>
+          <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.repairContext}}</text>         
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">维修人电话</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.repairMobile == null ? '' : item.repairMobile}}</text>
+        </view>
+        <view style="width:100%;height:120rpx;" class="view_item_center">            
+            <view class="view_center view3" data-item="{{item}}" catchtap="wancheng">维修完成</view>            
+        </view>
+      </view>
+  </van-tab>
+  <van-tab title="已维修">
+    <view style="wdith:100%;height:60rpx;font-size:24rpx;margin-top:10rpx;">
+        <text style="color:#9f9f9f;line-height:60rpx;margin-left:3%;">总计<text style="color:#000000;padding-left:10rpx;padding-right:10rpx;">{{page_data[active].data.length}}</text> 条</text>
+      </view>
+      <view class="view1" wx:for="{{page_data[active].data}}" wx:key="">
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">设备编号</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.eqNumber}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">设备地址</text>
+           <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.eqAddress}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">故障内容</text>
+           <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.errorContext}}</text>
+        </view>
+       <view class="view_cell">
+          <text style="margin-left:20rpx;">故障发生时间</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.errorTime}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">维修开始时间</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.repairBeginTime}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">维修内容</text>
+          <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.repairContext}}</text> 
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">维修人电话</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.repairMobile == null ? '' : item.repairMobile}}</text>
+        </view>
+        <view wx:if="{{item.isRegular == 1}}" class="view_cell" style="color:#e5000e;">
+          <text style="margin-left:20rpx;">不合格原因:{{item.inspectionRemark}}</text>          
+        </view>
+
+        <view wx:if="{{item.isRegular == 0 && info[0].status}}" style="width:100%;height:120rpx;" class="view_item_center">            
+            <view class="view_center view2" style="margin-left:30rpx;" data-item="{{item}}" catchtap="hege">合格</view>
+            <view class="view_center view2" style="margin-right:30rpx;" data-item="{{item}}" catchtap="openpopup_buhege">不合格</view>    
+        </view>
+
+        <image wx:if="{{item.isRegular == 2}}" src="../../../image/hege.png" class="img_hege" mode="widthFix"></image>
+        <image wx:if="{{item.isRegular == 1}}" src="../../../image/buhege.png" class="img_hege" mode="widthFix"></image>
+
+      </view>
+  </van-tab>
+  <van-tab title="已撤销">
+      <view style="wdith:100%;height:60rpx;font-size:24rpx;margin-top:10rpx;">
+        <text style="color:#9f9f9f;line-height:60rpx;margin-left:3%;">总计<text style="color:#000000;padding-left:10rpx;padding-right:10rpx;">{{page_data[active].data.length}}</text> 条</text>
+      </view>
+      <view class="view1" wx:for="{{page_data[active].data}}" wx:key="">
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">设备编号</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">上海188</text>
+        </view>
+       <view class="view_cell">
+          <text style="margin-left:20rpx;">设备地址</text>
+           <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.eqAddress}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">故障内容</text>
+           <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.errorContext}}</text>
+        </view>
+       <view class="view_cell">
+          <text style="margin-left:20rpx;">故障发生时间</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.errorTime}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">撤销时间</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.revokeTime}}</text>
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">撤销原因</text>
+          <text style="width:60%;line-height:60rpx;text-align:right; margin-right:20rpx;color:#64c3c7;">{{item.revokeResult}}</text> 
+        </view>
+        <view class="view_cell">
+          <text style="margin-left:20rpx;">撤销人电话</text>
+          <text style="margin-right:20rpx;color:#64c3c7;">{{item.repairMobile == null ? '' : item.repairMobile}}</text>
+        </view>
+      </view>
+  </van-tab>
+</van-tabs>
+
+
+<van-popup show="{{ weixiu_show }}" duration="0" custom-style="height: 430rpx;width:70%;border-radius:30rpx;" bind:close="onClose" closeable="{{true}}">
+  <view style="width:100%;height:60rpx;margin-top:20rpx;" class="view_center">维修内容</view>
+  <view class="input1">
+    <textarea style="float:left;width:100%;height:100%;padding-left:15rpx;padding-right:15rpx;" placeholder="0-100字" bindinput="weixiu_text_change"></textarea>  
+  </view>  
+  <view catchtap="start_repair" style="width:80%;height:70rpx;background:#64c3c7;color:#ffffff;border-radius:15rpx;margin-left:10%;margin-top:30rpx;" class="view_center">确定</view>
+</van-popup>
+
+<van-popup show="{{ chexiao_show }}" duration="0"  custom-style="height: 430rpx;width:70%;border-radius:30rpx;" bind:close="onClose_chexiao" closeable="{{true}}">
+  <view style="width:100%;height:60rpx;margin-top:20rpx;" class="view_center">撤销原因</view>
+  <view class="input1">
+    <textarea style="float:left;width:100%;height:100%;padding-left:15rpx;padding-right:15rpx;" placeholder="0-100字" bindinput="chexiao_text_change"></textarea>  
+  </view>  
+  <view catchtap="cancel_repair" style="width:80%;height:70rpx;background:#64c3c7;color:#ffffff;border-radius:15rpx;margin-left:10%;margin-top:30rpx;" class="view_center">确定</view>
+</van-popup>
+
+<van-popup show="{{ buhege_show }}"  custom-style="height: 430rpx;width:70%;border-radius:30rpx;" bind:close="onClose_buhege" closeable="{{true}}">
+  <view style="width:100%;height:60rpx;margin-top:20rpx;" class="view_center">不合格原因</view>
+  <view class="input1">
+    <textarea bindinput="buhege_text_change" style="float:left;width:100%;height:100%;padding-left:15rpx;padding-right:15rpx;" placeholder="请输入不合格原因"></textarea>  
+  </view>  
+  <view catchtap="buhege" style="width:80%;height:70rpx;background:#64c3c7;color:#ffffff;border-radius:15rpx;margin-left:10%;margin-top:30rpx;" class="view_center">确定</view>
+</van-popup>
+

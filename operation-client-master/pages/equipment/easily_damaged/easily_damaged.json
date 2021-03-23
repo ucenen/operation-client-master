@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "易损件更换",
+  "usingComponents": {
+    "van-popup": "../../../dist/popup/index"
+  }
+}

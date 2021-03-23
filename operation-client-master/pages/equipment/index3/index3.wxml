@@ -1,0 +1,11 @@
+<view class="view1">
+  <text>设备编号</text>
+  <input type="text" catchtap="onclick"  value="{{eqNumber}}" placeholder="请输入设备编号" class="input_text" bindinput="dianwei_change"></input>
+</view>
+<view wx:if="{{result_status}}" class="sousuo">
+  <view wx:for="{{result}}" wx:key="" catchtap="select_item" data-item="{{item}}" style="width:100%;height:80rpx;display:flex;align-items: center;border-bottom:1px solid #eeeeee;overflow: auto;">
+    <text  style="margin-left:20rpx;font-size:28rpx;">{{item}}</text>
+  </view>
+</view>
+
+<view class="but" catchtap="openpage" data-url="../easily_damaged/easily_damaged">查询</view>

@@ -1,0 +1,82 @@
+/* pages/service/repairlist/repairlist.wxss */
+
+page {
+  background-color: #f6f8f7;
+}
+
+.view1 {
+  position: relative;
+  width: 94%;
+  height: auto;
+  margin-left: 3%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 30rpx;
+}
+
+.view_cell {
+  width: 100%;
+  height: auto;
+  line-height: 80rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  border-top:0rpx;
+}
+
+.view_item_center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+
+.view2 {
+  width: 200rpx;
+  height: 70rpx;
+  background: #64c3c7;
+  border-radius: 15rpx;
+  color: #fff;
+}
+
+.input1 {   
+  width: 90%;
+  height: 200rpx;
+  border: 1px solid #eee;
+  margin-left:5%;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.view3 {
+  width: 90%;
+  height: 70rpx;
+  margin-left:5%;
+  background: #64c3c7;
+  border-radius: 15rpx;
+  color: #fff;
+}
+
+.img_hege{
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top:20%;
+}
+
+.van-hairline--top-bottom{
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}

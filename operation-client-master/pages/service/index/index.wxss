@@ -1,0 +1,80 @@
+/* pages/service/index/index.wxss */
+.viewall{
+  margin-top: 20rpx;
+  width: 95%;
+  margin-bottom: 50rpx;
+  margin-left: 2.5%;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+ 
+}
+
+.view1{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+}
+.popup1{
+  position: absolute;
+  bottom: 0px;
+  display: flex;align-items: center;justify-content: center;
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+}
+
+.view2{
+  width: 100%;
+  height: 70rpx;
+  /* border: 1px solid #eee; */
+  border-top: 0rpx; 
+}
+
+.input1{
+  width: 92%;
+  height: 70rpx;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #eee;
+  line-height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.but{
+  width: 90%;
+  height: 80rpx;
+  margin-left: 5%;
+  color: #ffffff;
+  background-color: #64c3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15rpx;
+  margin-top: 100rpx;
+  margin-bottom: 50rpx;
+}
+
+.view_cele{
+  width: 100%;
+  height: 80rpx;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: space-between; */
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.sousuo{
+  width: 92%;
+  height: 300rpx;
+  overflow: auto;
+  margin-left: 4%;  
+  border: 1px solid #eee;
+  border-top: 0px solid #ffffff;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}

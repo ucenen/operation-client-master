@@ -1,0 +1,7 @@
+<view wx:if="{{auth}}" class="view1">
+  <image style="width:50%;" src="../../image/authority.png" mode="widthFix"></image>    
+</view>
+<view wx:if="{{auth}}" class="view1">
+  <text space="font-size:30rpx;margin-top:30rpx;">抱歉，您不是本公司运维人员！暂无权限！</text>
+</view>
+

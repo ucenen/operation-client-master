@@ -1,0 +1,127 @@
+<van-search
+  value="{{ eqNumber }}"
+  placeholder="请输入设备编号"
+  bind:focus="onclick"
+  use-action-slot
+  bind:change="eqNumber_change"
+>
+  <view slot="action" bind:tap="getall">搜索</view>
+</van-search>
+<view wx:if="{{result_status}}" class="sousuo">
+  <view wx:for="{{result}}" wx:key="" catchtap="select_item" data-item="{{item}}" style="width:100%;height:80rpx;display:flex;align-items: center;border-bottom:1px solid #eeeeee;overflow: auto;">
+    <text  style="margin-left:20rpx;font-size:28rpx;">{{item}}</text>
+  </view>
+</view>
+
+<view class="view2">
+  <view class="view2_item">
+    <view style="{{select_type=='1'?'color:#ffffff;background:#64c3c7;':''}}" catchtap="select_change" data-item="1" class="item1">正常</view>
+    <view style="{{select_type=='3'?'color:#ffffff;background:#64c3c7;':''}}" catchtap="select_change" data-item="3" class="item1">缺料</view>
+    <view style="{{select_type=='2'?'color:#ffffff;background:#64c3c7;border-right:0rpx;':''}}" catchtap="select_change" data-item="2" class="item1">故障</view>
+  </view>
+</view>
+
+<view class="view3" wx:for="{{data_list}}" wx:key="ss">
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">设备编号:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.eqNumber}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">点位名称:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.placeName}}</text>
+  </view>
+  <!-- 
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">设备状态:</text>
+    <text wx:if="{{item.eqState == 1}}" style="color:#a0a0a0;margin-left:20rpx;">正常</text>
+    <text wx:if="{{item.eqState == 2}}" style="color:#a0a0a0;margin-left:20rpx;">故障</text>
+    <text wx:if="{{item.eqState == 3}}" style="color:#a0a0a0;margin-left:20rpx;">缺料</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">在线状态:</text>
+    <text wx:if="{{item.isOnline == 1}}" style="color:#a0a0a0;margin-left:20rpx;">在线</text>
+    <text wx:if="{{item.isOnline == 0}}" style="color:#a0a0a0;margin-left:20rpx;">离线</text>
+  </view>
+   -->
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">设备状态:</text>
+    <text wx:if="{{item.eqState == 1 && item.isOnline == 1}}" style="color:#a0a0a0;margin-left:20rpx;">在线</text>
+    <text wx:if="{{item.eqState == 1 && item.isOnline == 0}}" style="color:#a0a0a0;margin-left:20rpx;">离线</text>
+    <text wx:if="{{item.eqState == 2 && item.isOnline == 1}}" style="color:#a0a0a0;margin-left:20rpx;">故障</text>
+    <text wx:if="{{item.eqState == 2 && item.isOnline == 0}}" style="color:#a0a0a0;margin-left:20rpx;">离线</text>
+    <text wx:if="{{item.eqState == 3 && item.isOnline == 1}}" style="color:#a0a0a0;margin-left:20rpx;">缺料</text>
+    <text wx:if="{{item.eqState == 3 && item.isOnline == 0}}" style="color:#a0a0a0;margin-left:20rpx;">离线</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">停售状态:</text>
+    <text wx:if="{{item.stopFlag == 0}}" style="color:#a0a0a0;margin-left:20rpx;">未停售</text>
+    <text wx:if="{{item.stopFlag == 1}}" style="color:#a0a0a0;margin-left:20rpx;">已停售</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">冰箱温度:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.desc1}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">豆仓温度:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.desc2}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">制作仓温度:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.desc3}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">豆仓湿度:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.humidityValue2}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">更新时间:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.lastMaintenanceTime}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">上位机软件:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.swjVer}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">点单屏软件:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.ddpVer}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">点单屏系统:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.xtVer}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">点单屏内核:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.nhVer}}</text>
+  </view>
+  <view class="view3_item">
+    <text style="color:#a0a0a0;margin-left:30rpx;">广告屏版本:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.ggpVer}}</text>
+  </view>
+  <view class="view3_item" style="border-bottom:1px solid #eee;">
+    <text style="color:#a0a0a0;margin-left:30rpx;">固件版本:</text>
+    <text style="color:#a0a0a0;margin-left:20rpx;">{{item.gjVer}}</text>
+  </view>
+  <view class="view3_item2">
+    <view class="item2" catchtap="opensheet" data-eqNumber="{{item.eqNumber}}" data-stopFlag="{{item.stopFlag}}">远程操作</view>
+    <view class="item2" catchtap="open_edit_sheet" data-eqNumber="{{item.eqNumber}}">编辑状态</view>
+    <view class="item2" catchtap="openmaterial" data-eqNumber="{{item.eqNumber}}" data-url="../materials/materials">物料</view>
+    <view class="item2" catchtap="openpage" data-eqNumber="{{item.eqNumber}}" data-url="../status/status" style="border-right:0rpx;">状态记录</view>
+  </view>
+</view>
+
+<view style="width:100%;height:100rpx;"></view>
+
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+
+
+<van-action-sheet
+  show="{{ edit_state }}"
+  actions="{{ edit_actions }}"
+  bind:close="on_edit_Close"
+  bind:select="on_edit_Select"
+/>

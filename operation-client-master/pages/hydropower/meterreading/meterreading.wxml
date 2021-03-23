@@ -1,0 +1,105 @@
+<van-tabs active="{{ active }}" bind:change="onChange" color="#5dc5c6">
+  <van-tab title="用水量">
+      <view class="view1">
+        <text style="margin-left:10%;">用水量数据统计</text>
+      </view>
+      <view class="view1">
+         <view class="view1_item" catchtap="openpopup" style="margin-left:10%;">添加用水量</view>
+      </view>
+
+      <view class="select_time">
+		<text catchtap="time_openpopup" data-type="1" style="color:{{start_time == null ? '#949595':''}}">{{start_time == null ? '请选择开始时间':start_time}}</text>
+		<text style="color:#949595;">-</text>
+		<text catchtap="time_openpopup" data-type="2" style="color:{{end_time == null ? '#949595':''}}">{{end_time == null ? '请选择结束时间':end_time}}</text>
+      </view>
+	  
+	  <view class="title1">用水量记录</view>
+      <view class="view2">
+        <view class="view2_item" style="background:#64c3c7;color:#ffffff;">日期</view>
+        <view class="view2_item" style="border-right:0rpx;background:#64c3c7;color:#ffffff;">用水量(t)</view>
+      </view>
+
+      <view class="view3" wx:for="{{water_table_date}}" wx:key="">
+        <view class="view2_item">{{item.mrTime}}</view>
+        <view class="view2_item" style="border-right:0rpx;">{{item.usageAmount}}{{item.unit}}</view>
+      </view>
+  </van-tab>
+  <van-tab title="用电量">
+     <view class="view1">
+        <text style="margin-left:10%;">用电量数据统计</text>
+      </view>
+      <view class="view1">
+         <view class="view1_item" catchtap="dianliang_openpopup" style="margin-left:10%;">添加用电量</view>
+      </view>
+
+      <view class="select_time">
+		<text catchtap="time_openpopup" data-type="3" style="color:{{start_time2 == null ? '#949595':''}}">{{start_time2 == null ? '请选择开始时间':start_time2}}</text>
+		<text style="color:#949595;">-</text>
+		<text catchtap="time_openpopup" data-type="4" style="color:{{end_time2 == null ? '#949595':''}}">{{end_time2 == null ? '请选择结束时间':end_time2}}</text>
+      </view>
+
+      <view class="title1">用电量记录</view>
+      <view class="view2">
+        <view class="view2_item" style="background:#64c3c7;color:#ffffff;">日期</view>
+        <view class="view2_item" style="border-right:0rpx;background:#64c3c7;color:#ffffff;">用电量(kw/h)</view>
+      </view>
+
+      <view class="view3" wx:for="{{electricity_table_date}}" wx:key="">
+        <view class="view2_item">{{item.mrTime}}</view>
+        <view class="view2_item" style="border-right:0rpx;">{{item.usageAmount}}{{item.unit}}</view>
+      </view>
+
+  </van-tab>
+</van-tabs>
+
+
+<van-popup show="{{ show }}"  custom-style="height: 300rpx;width:70%;border-radius:30rpx;" bind:close="onClose" closeable="{{true}}">
+  <view style="width:100%;height:60rpx;margin-top:20rpx;" class="view_center">输入用水量</view>
+  <view class="view4">
+    <input type="digit" class="input1" bindinput="water_change" cursor-spacing="100"></input>
+    <text style="font-size:30rpx;">(t)</text>
+  </view>
+  <!-- <input type="digit" class="input1" bindinput="water_change" cursor-spacing="100"></input> -->
+  <view catchtap="add_meter_reading" style="width:80%;height:70rpx;background:#64c3c7;color:#ffffff;border-radius:15rpx;margin-left:10%;margin-top:30rpx;" class="view_center">确定</view>
+</van-popup>
+
+<van-popup show="{{ dianliang_show }}"  custom-style="height: 300rpx;width:70%;border-radius:30rpx;" bind:close="dianliang_onClose" closeable="{{true}}">
+  <view style="width:100%;height:60rpx;margin-top:20rpx;" class="view_center">输入用电量</view>
+  <view class="view4">
+    <input type="digit" class="input1" bindinput="electricity_change" cursor-spacing="100"></input>
+    <text style="font-size:30rpx;">(kw/h)</text>
+  </view>
+  <!-- <input type="digit" class="input1" bindinput="electricity_change" cursor-spacing="100"></input> -->
+  <view catchtap="add_meter_reading" style="width:80%;height:70rpx;background:#64c3c7;color:#ffffff;border-radius:15rpx;margin-left:10%;margin-top:30rpx;" class="view_center">确定</view>
+</van-popup>
+
+<!-- min-date="{{ minDate }}"
+	   -->
+<van-popup
+  show="{{ time_show }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="popuponClose">
+    <van-datetime-picker
+      type="date"
+      value="{{ currentDate }}"
+      max-date="{{ maxDate }}"
+      bind:confirm = "confirm"
+      bind:cancel = "popuponClose"    
+    />
+</van-popup>
+
+<!-- <van-popup
+  show="{{ time_show2 }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="popuponClose">
+    <van-datetime-picker
+      type="date"
+      value="{{ currentDate2 }}"
+	  min-date="{{ minDate2 }}"
+	  max-date="{{ maxDate2 }}"
+	  bind:confirm = "confirm"
+	  bind:cancel = "popuponClose"    
+    />
+</van-popup> -->

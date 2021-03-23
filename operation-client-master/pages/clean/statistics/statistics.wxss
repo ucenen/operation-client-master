@@ -1,0 +1,12 @@
+/* pages/equipment/abnormal/abnormal.wxss */
+
+.view1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view_item_center{
+  display: flex;
+  align-items: center;
+}

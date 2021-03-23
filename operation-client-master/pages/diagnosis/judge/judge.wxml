@@ -1,0 +1,20 @@
+<view class="view1">
+  <text>选择诊断内容</text>
+</view>
+
+<view class="view1" style="margin-top:30rpx;">
+  <view class="view1_item" wx:for="{{arr}}" wx:key="" style="{{item.status ? 'background:#64c3c7;':''}}" catchtap="select" data-index="{{index}}" >{{item.name}}</view>
+
+</view>
+
+
+
+<view class="view2">
+  <text style="">自定义内容</text>
+</view>
+
+<view class="view2">
+  <textarea class="textarea1" placeholder="100字以内" bindinput="input_change"></textarea>
+</view>
+
+<view class="but" catchtap="diagnosis_kiosk" data-url="../orderdetail/orderdetail">确定</view>

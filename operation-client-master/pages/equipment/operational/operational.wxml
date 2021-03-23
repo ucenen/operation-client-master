@@ -1,0 +1,28 @@
+<van-cell title="时间" value="{{data_list.mtTime}}" />
+<van-cell title="类型(清洁/补料)" value="{{data_list == 0 ? '补料':'清洁'}}" />
+<van-cell title="内容" value="" border="{{false}}" />
+  <view style="width:93%;height:auto;margin-left:3.5%;line-height:80rpx;border-bottom:1px solid #eee;">
+      <text style="font-size:26rpx;color:#a0a0a0;">{{data_list.mtContent}}</text>         
+  </view>
+<van-cell title="运维人员" value="{{data_list.operator}}" />
+<view  wx:if="{{data_list.isRegular == 1}}" style="width:95%;margin-left:2.5%;margin-top:30rpx;">
+  <text style="color:red;font-size:30rpx;">不合格原因:{{input_text}}</text>
+</view>
+
+<view wx:if="{{data_list.isRegular == 0}}" class="view2">
+  <view style="width:40%;height:100%;background:#64c3c7;border-radius:15rpx;color:#ffffff;" catchtap="hege" class="view_center">合格</view>
+  <view style="width:40%;height:100%;background:#dcdedd;border-radius:15rpx;color:#ffffff;" catchtap="openpopup" class="view_center">不合格</view>
+</view>
+
+<image wx:if="{{data_list.isRegular == 2}}" src="../../../image/hege.png" class="img_hege" mode="widthFix"></image>
+<image wx:if="{{data_list.isRegular == 1}}" src="../../../image/buhege.png" class="img_hege" mode="widthFix"></image>
+
+
+<van-popup show="{{ show }}"  custom-style="height: 400rpx;width:70%;border-radius:30rpx;" bind:close="onClose" closeable="{{true}}">
+   <view style="width:95%;margin-left:2.5%;height:200rpx;margin-top:80rpx;background:#f4f4f4;border-radius:15rpx;overflow: auto;">
+    <textarea style="line-height:50rpx;font-size:28rpx;padding-top:10rpx;width:95%;height:95%;margin-left:2.5%;padding-bottom:10rpx;" placeholder="请输入不合格原因" bindinput="input_change" cursor-spacing="100"></textarea>
+   </view>
+   
+
+  <view catchtap="buhege" style="width:80%;height:70rpx;background:#64c3c7;color:#ffffff;border-radius:15rpx;margin-left:10%;margin-top:30rpx;" class="view_center">确定</view>
+</van-popup>

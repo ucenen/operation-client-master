@@ -1,0 +1,13 @@
+<view class="view1">
+  <view class="input1">
+    <text>openid:</text>
+    <input  type="text" disabled value="{{openid}}"></input>
+  </view>
+  <view class="input2">
+    <text>员工id:</text>
+    <input  type="number" bindinput="input_change"></input>
+  </view>
+
+  <button class="buttom1" bindtap="submit">提交</button>
+
+</view>

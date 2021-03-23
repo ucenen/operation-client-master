@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "对外销售统计",
+  "usingComponents": {
+    "van-search": "../../../dist/search/index",
+    "van-dropdown-menu": "../../../dist/dropdown-menu/index",
+    "van-dropdown-item": "../../../dist/dropdown-item/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-popup": "../../../dist/popup/index",
+    "van-datetime-picker": "../../../dist/datetime-picker/index"
+  }
+}

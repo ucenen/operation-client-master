@@ -1,0 +1,23 @@
+
+<van-collapse value="{{ activeNames }}" bind:change="onChange" accordion   >
+  
+  <van-collapse-item wx:for="{{new_data}}" wx:key="sss"  name="{{index}}">
+    
+    <view slot="title">
+      <view style="width:100%;">
+        <text>2019-10-12 12:00:00</text>
+      </view>
+    </view>
+ 
+    <view wx:for = "{{item}}" wx:key  wx:for-item="list" >     
+      <van-cell  title="{{list.text}}" value="{{list.value}}" />
+      <!-- wx:if="{{list.text!='录入内容'}}" -->
+      <!-- <van-cell wx:if="{{list.text=='录入内容'}}" title="{{list.text}}" value="" border="{{false}}" />
+      <view wx:if="{{list.text=='录入内容'}}" style="width:94%;height:auto;margin-left:3%;line-height:80rpx;border-bottom:1px solid #eee;">
+          <text>{{list.value}}</text>         
+      </view> -->
+    
+    </view>
+  </van-collapse-item>
+
+</van-collapse>

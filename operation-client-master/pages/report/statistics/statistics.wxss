@@ -1,0 +1,42 @@
+/* pages/report/statistics/statistics.wxss */
+
+.view_center{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.view_item_center{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view1{
+  float: left;
+  width: 45.5%;
+  height: auto;
+  margin-left: 3%;  
+  border-radius: 0px 0px 20rpx 20rpx;
+  overflow: hidden;
+  border:1px solid #eee;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}
+
+.view2{
+  float: left;
+  width: 94%;
+  height: auto;
+  margin-left: 3%;  
+  border-radius: 0px 0px 20rpx 20rpx;
+  overflow: hidden;
+  border:1px solid #eee;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}
+
+.view2_item{
+  float: left;
+  width: 50%;
+  height: 120rpx;
+  background-color: #ffffff;
+}

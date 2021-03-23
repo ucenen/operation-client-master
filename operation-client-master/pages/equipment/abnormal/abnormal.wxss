@@ -1,0 +1,39 @@
+/* pages/equipment/abnormal/abnormal.wxss */
+
+.view1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view_item_center{
+  display: flex;
+  align-items: center;
+}
+
+page{
+  background-color: #f4f4f4;
+}
+
+.view2{
+  width: 95%;
+  height: auto;
+  margin-left: 2.5%;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  
+}
+
+.view2_item{
+  color:#969799;font-size:28rpx;
+}
+
+.view3{
+  width: 95%;
+  margin-left: 2.5%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color:#969799;
+}

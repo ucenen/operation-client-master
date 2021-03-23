@@ -1,0 +1,92 @@
+<view hidden="{{!info[0].status}}" class="view1">
+    <view style="width:100%;height:100rpx;background:#64c3c7;" class="view_center">
+      <text style="font-size:30rpx;color:#ffffff;">销售统计</text>
+    </view>
+    <view style="width:100%;height:100rpx;" class="view_item_center">
+      <text style="margin-left:30rpx;font-size:26rpx;">销售金额</text>
+      <text style="margin-right:30rpx;font-size:26rpx;color:#9f9f9f;">{{data_list.sellMap.salesAmount}}</text>
+    </view>
+    <view style="width:100%;height:100rpx;" class="view_item_center">
+      <text style="margin-left:30rpx;font-size:26rpx;">销售杯数</text>
+      <text style="margin-right:30rpx;font-size:26rpx;color:#9f9f9f;">{{data_list.sellMap.salesCups}}</text>
+    </view>
+    <view style="width:100%;height:100rpx;" class="view_item_center">
+      <text style="margin-left:30rpx;font-size:26rpx;">均 价</text>
+      <text style="margin-right:30rpx;font-size:26rpx;color:#9f9f9f;">{{data_list.sellMap.averagePrice}}</text>
+    </view>
+    <view style="width:100%;height:100rpx;background:#ffffff;border-top:1px solid #eee;" class="view_center" catchtap="openpage" data-url="../sales/sales">
+      <text style="font-size:30rpx;color:#000000;" >更多</text>
+    </view>
+</view>
+
+<view hidden="{{!info[1].status}}" class="view1">
+    <view style="width:100%;height:100rpx;background:#64c3c7;" class="view_center">
+      <text style="font-size:30rpx;color:#ffffff;">设备统计</text>
+    </view>
+    <view style="width:100%;height:100rpx;color:#118f45;" class="view_item_center">
+      <text style="margin-left:30rpx;font-size:26rpx;">正常</text>
+      <text style="margin-right:30rpx;font-size:26rpx;color:#9f9f9f;">{{data_list.eqMap.normalEq}}</text>
+    </view>
+    <view style="width:100%;height:100rpx;color:#aba40b;" class="view_item_center">
+      <text style="margin-left:30rpx;font-size:26rpx;">缺料</text>
+      <text style="margin-right:30rpx;font-size:26rpx;color:#9f9f9f;">{{data_list.eqMap.lackEq}}</text>
+    </view>
+    <view style="width:100%;height:100rpx;color:#d90009;" class="view_item_center">
+      <text style="margin-left:30rpx;font-size:26rpx;">故障</text>
+      <text style="margin-right:30rpx;font-size:26rpx;color:#9f9f9f;">{{data_list.eqMap.faultEq}}</text>
+    </view>
+    <view style="width:100%;height:100rpx;background:#ffffff;border-top:1px solid #eee;"  class="view_center" catchtap="openpage" data-url="../../equipment/statistics/statistics">
+      <text style="font-size:30rpx;color:#000000;">更多</text>
+    </view>
+</view>
+
+<view hidden="{{!info[2].status}}" class="view2" style="margin-top:50rpx;">
+     <view style="width:100%;height:100rpx;background:#64c3c7;" class="view_center">
+      <text style="font-size:30rpx;color:#ffffff;">商品统计</text>
+    </view>
+    <view class="view2_item">
+        <view style="width:100%;height:80rpx;color:#da0313;" class="view_center">
+          <text style="font-size:30rpx;">销售额最多</text>          
+        </view>
+        <view style="width:100%;height:40rpx;color:#9f9f9f;" class="view_center">
+          <text style="font-size:26rpx;">{{data_list.productMap.mostSalesPro}}</text>          
+        </view>
+    </view>
+
+    <view class="view2_item">
+        <view style="width:100%;height:80rpx;color:#da0313;" class="view_center">
+          <text style="font-size:30rpx;">销售额最少</text>          
+        </view>
+        <view style="width:100%;height:40rpx;color:#9f9f9f;" class="view_center">
+          <text style="font-size:26rpx;">{{data_list.productMap.leastSalesPro}}</text>          
+        </view>
+    </view>
+
+    <view class="view2_item">
+        <view style="width:100%;height:80rpx;color:#da0313;" class="view_center">
+          <text style="font-size:30rpx;">销售杯数最多</text>          
+        </view>
+        <view style="width:100%;height:40rpx;color:#9f9f9f;" class="view_center">
+          <text style="font-size:26rpx;">{{data_list.productMap.mostSoldCupsPro}}</text>          
+        </view>
+    </view>
+
+    <view class="view2_item">
+        <view style="width:100%;height:80rpx;color:#da0313;" class="view_center">
+          <text style="font-size:30rpx;">销售杯数最少</text>          
+        </view>
+        <view style="width:100%;height:40rpx;color:#9f9f9f;" class="view_center">
+          <text style="font-size:26rpx;">{{data_list.productMap.leastSoldCupsPro}}</text>          
+        </view>
+    </view>
+    
+    <view  style="float:left;width:100%;height:100rpx;background:#ffffff;border-top:1px solid #eee;margin-top:30rpx;" class="view_center">
+        <view style="float:left;width:50%;height:100%;" class="view_center"  catchtap="openpage" data-url="../merchandising/merchandising">
+             <text style="font-size:30rpx;color:#000000;">更多商品</text>
+        </view>
+        <view hidden="{{!info[3].status}}" style="float:left;width:50%;height:100%;border-left:1px solid #eee;" class="view_center" catchtap="openpage" data-url="../rawmaterial/rawmaterial">
+             <text style="font-size:30rpx;color:#000000;">原料消耗</text>
+        </view>
+    </view>
+
+</view>

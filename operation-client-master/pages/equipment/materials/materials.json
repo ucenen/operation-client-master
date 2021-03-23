@@ -1,0 +1,6 @@
+{ 
+  "navigationBarTitleText": "物料",
+  "usingComponents": {
+    "van-popup": "../../../dist/popup/index"
+  }
+}

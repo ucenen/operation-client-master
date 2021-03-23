@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "今日数据预览",
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+      "van-grid": "../../dist/grid/index",
+      "van-grid-item": "../../dist/grid-item/index",
+      "van-button": "../../dist/button/index"
+  }
+}

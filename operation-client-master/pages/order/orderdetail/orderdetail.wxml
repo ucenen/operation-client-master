@@ -1,0 +1,91 @@
+<van-collapse value="{{ activeNames }}" bind:change="onChange" accordion>
+  
+  <van-collapse-item name="{{item.index}}" wx:for="{{list_data}}" wx:key="">
+    <view slot="title">
+      <view style="width:100%;">
+        <text>{{item.createTime}}</text>
+      </view>
+      <view style="width:100%;">
+        <text wx:if="{{item.orderState == 0}}" style="color:red;">待付款</text>
+        <text wx:if="{{item.orderState == 1}}" style="color:red;">待消费</text>
+        <text wx:if="{{item.orderState == 2}}" style="color:red;">制作中</text>
+        <text wx:if="{{item.orderState == 3}}" style="color:red;">已完成</text>
+        <text wx:if="{{item.orderState == 4}}" style="color:red;">已退款</text>
+        <text wx:if="{{item.orderState == 5}}" style="color:red;">已取消支付</text>
+        <text wx:if="{{item.orderState == 6}}" style="color:red;">制作完成，待取</text>
+        <text wx:if="{{item.orderState == 7}}" style="color:red;">已退款</text>
+        <!-- <text wx:if="{{item.orderState == 6}}" style="color:red;">已结束</text> -->
+        <text style="margin-left:15rpx;">{{item.placeName}}</text>
+      </view>      
+    </view>
+ 
+    <view>
+     <!-- <van-cell title="操作">
+        <view style="float:right;height:40rpx;margin-right:20rpx;" class="view1">
+          <van-dropdown-menu >
+           <van-dropdown-item bind:change="dropdownchange" value="{{ value1 }}" options="{{ option1 }}" />        
+          </van-dropdown-menu>
+        </view>
+      </van-cell> -->
+      <van-cell wx:if="{{(item.orderState == 1 || item.orderState == 2 || item.orderState == 3) && info[0].status}}" title="操作" is-link bind:click="opensheet" data-order="{{item}}" />
+      <!-- <van-cell title="订单编号" label="{{item.orderNumber}}" /> -->
+      <van-cell title="支付时间" value="{{item.createTime}}" />
+      <van-cell title="订单编号" >
+        <text style="float:left;width:100%;height:auto;word-wrap:break-word;">{{item.orderNumber}}</text>
+      </van-cell>   
+      <van-cell title="用户昵称" value="{{item.nickname}}" />
+      <van-cell title="手机号" value="{{item.mobile}}" />
+      <van-cell title="设备编号" value="{{item.eqNumber}}" />
+      <van-cell title="订单状态" >
+        <text wx:if="{{item.orderState == 0}}" >待付款</text>
+        <text wx:if="{{item.orderState == 1}}" >待消费</text>
+        <text wx:if="{{item.orderState == 2}}" >制作中</text>
+        <text wx:if="{{item.orderState == 3}}" >已完成</text>
+        <text wx:if="{{item.orderState == 4}}" >已退款</text>
+        <text wx:if="{{item.orderState == 5}}" >已取消支付</text>
+        <text wx:if="{{item.orderState == 6}}" >制作完成，待取</text>
+        <text wx:if="{{item.orderState == 7}}" >已退款</text>
+      </van-cell>
+      <van-cell title="订单类型" >
+        <text wx:if="{{item.orderType == 1}}" >现场下单</text>
+        <text wx:if="{{item.orderType == 2}}" >线上点单</text>
+      </van-cell>
+      <van-cell title="支付方式" >
+        <text wx:if="{{item.payMethod == 0}}" >微信支付</text>
+        <text wx:if="{{item.payMethod == 1}}" >支付宝支付</text>
+        <text wx:if="{{item.payMethod == 2}}" >刷卡支付</text>
+        <text wx:if="{{item.payMethod == 3}}" >现金支付</text>
+        <text wx:if="{{item.payMethod == 4}}" >测试杯</text>
+        <text wx:if="{{item.payMethod == 5}}" >其它</text>
+        <text wx:if="{{item.payMethod == 6}}" >建行合码</text>
+        <text wx:if="{{item.payMethod == 7}}" >账户余额</text>
+        <text wx:if="{{item.payMethod == 8}}" >企业账户余额</text>
+        <text wx:if="{{item.payMethod == 9}}" >微信小程序</text>
+        <text wx:if="{{item.payMethod == 10}}" >支付宝小程序</text>
+        <text wx:if="{{item.payMethod == 11}}" >银联</text>
+      </van-cell>
+      <van-cell title="支付金额" value="￥{{item.payAmount}}" />
+      <van-cell title="优惠金额" value="￥{{item.couponValue ==null ? '0' : item.couponValue}}" />      
+      <van-cell title="商品名称" title-width="150rpx">
+        <view wx:for="{{item.product}}" wx:for-item="rrr" wx:key=""> 
+          <text style="width:100%;display: block;">{{rrr.productNames}}</text>    
+          <text style="width:100%;display: block;">({{rrr.norms}})</text>     
+        </view>
+      </van-cell>
+      <!-- <view class="product1">
+        <view style="width:100%;height:88rpx;"></view>
+      </view> -->
+      <!-- <van-cell title="商品规格" value="大杯" />    -->
+      <!-- <van-cell title="制作状态" value="制作完成" />    -->
+    
+    </view>
+  </van-collapse-item>
+
+</van-collapse>
+
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>

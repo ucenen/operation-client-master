@@ -1,0 +1,35 @@
+/* pages/order/refund/refund.wxss */
+
+.view1{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 999999999;
+}
+
+.view2{
+  width: 94%;
+  margin-left: 3%;
+  height: 200rpx;
+  background-color: #f4f4f4;
+  border-radius:10rpx;
+
+}
+
+.input_text1{
+  float:left; width:96%;height:100%;margin-left:2%;font-size:28rpx;line-height:50rpx;
+}
+
+.but{
+  float: left;
+  width: 90%;
+  height: 80rpx;
+  margin-left: 5%;
+  color: #ffffff;
+  background-color: #64c3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15rpx;
+  margin-top: 50rpx;
+}

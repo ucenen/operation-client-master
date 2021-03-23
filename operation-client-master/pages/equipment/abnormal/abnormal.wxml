@@ -1,0 +1,43 @@
+<!-- <van-collapse value="{{ activeNames }}" bind:change="onChange" >
+  
+  <van-collapse-item wx:for="{{3}}" name="{{index}}"  wx:key>
+    <view slot="title">
+      <view style="width:100%;">
+        <text>2019-10-12 12:00:00</text>
+      </view>
+    </view>
+ 
+    <view>     
+      <van-cell title="时间" value="2019-10-15 12:55:30" />
+      <van-cell title="内容" value="" border="{{false}}" />
+      <view style="width:93%;height:auto;margin-left:3.5%;line-height:80rpx;border-bottom:1px solid #eee;">
+          <text>制冰机漏水，花洒漏水</text>         
+      </view>
+
+      <van-cell title="设备编号" value="SH123456789" />
+      <van-cell title="设备地址" value="上海市长宁区商务中兴" />
+      <van-cell title="故障时间" value="2019-10-12 12:00:00" />
+      <van-cell title="故障内容" value="转盘损坏" />
+      <van-cell title="维修开始时间" value="2019-10-12 12:00:00" />
+      <van-cell title="维修结束时间" value="2019-10-12 12:00:00" />
+      <van-cell title="维修内容" value="换个转盘" />      
+      <van-cell title="维修人电话" value="15927068750" />   
+
+    
+    </view>
+  </van-collapse-item>
+
+</van-collapse> -->
+<view class="view2" wx:for="{{data_list}}" wx:key>
+  <view class="view_item_center" style="width:95%;height:80rpx;border-bottom:1px solid #eeeeee;margin-left:2.5%;">
+      <text class="view2_item">{{item.errorTime}}</text>
+  </view>
+  <view class="view3">
+    <text>故障码：{{item.errorCode}}</text>
+  </view>
+  <view class="view3">
+    <text>{{item.errorContext}}</text>
+  </view>
+</view>
+
+<view style="width:100%;height:50rpx;"></view>

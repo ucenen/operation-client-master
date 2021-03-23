@@ -1,0 +1,14 @@
+/* pages/equipment/volume/volume.wxss */
+.section_gap{
+  margin-top: 50px;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 33%;
+}
+.mini-btn{
+  margin-right: 30rpx;
+}
+.button-save{
+  margin-top: 50px;
+}

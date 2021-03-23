@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设备固件",
+  "usingComponents": {
+    "van-popup": "../../../dist/popup/index"
+  }
+}

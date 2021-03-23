@@ -1,0 +1,18 @@
+<!--pages/equipment/volume/volume.wxml-->
+<!-- <web-view src="https://www.baidu.com" /> -->
+<view class="section_gap">
+    <view class="button-sp-area">
+    <button class="mini-btn" type="default" plain="true" size="mini" catchtap="less_btn">减</button>
+    <button class="mini-btn" type="default" plain="true" size="mini" catchtap="plus_btn">增</button>
+    </view>
+    <view class="body-view">
+        <slider id="ex1" min="0" max="10" step="1" value="{{volume}}" bindchange="change_ok" show-value/>
+    </view>
+    <view class="button-save">
+    <button type="default" plain="true" size="default" catchtap="save_btn">保存</button>
+    </view>
+</view>
+
+
+
+

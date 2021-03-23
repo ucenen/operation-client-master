@@ -1,0 +1,6 @@
+{ 
+  "navigationBarTitleText": "清洁",
+  "usingComponents": {
+    "van-cell": "../../../dist/cell/index"
+  }
+}

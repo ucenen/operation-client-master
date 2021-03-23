@@ -1,0 +1,12 @@
+<van-cell
+  is-link
+  title="清洁"
+  link-type="navigateTo"
+  url="../bynumber/bynumber"
+/>
+<van-cell
+  is-link
+  title="废料"
+  link-type="navigateTo"
+  url="../scrap/scrap"
+/>

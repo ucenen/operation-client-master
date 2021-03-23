@@ -1,0 +1,7 @@
+{ 
+  "navigationBarTitleText": "设备统计",
+  "usingComponents": {
+    "van-search": "../../../dist/search/index",
+    "van-action-sheet": "../../../dist/action-sheet/index"
+  }
+}

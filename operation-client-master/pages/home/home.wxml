@@ -1,0 +1,38 @@
+  <!-- <view class="view1">今日数据概览</view> -->
+  <view class="view2">
+    <view class="view2_item">
+      <text style="margin-left:40rpx;">今日销售总额</text>
+      <text style="color:#969b9e;margin-left:15rpx;">{{data_list.totalAmount}}</text>
+    </view>
+    <view class="view2_item">
+      <text style="margin-left:40rpx;">今日销售杯数</text>
+      <text style="color:#969b9e;margin-left:15rpx;">{{data_list.cupCount}}</text>
+    </view>
+    <view class="view2_item">
+      <text style="margin-left:40rpx;">运营设备总数</text>
+      <text style="color:#969b9e;margin-left:15rpx;">{{data_list.eqCounts}}</text>
+    </view>
+    <view class="view2_item">
+      <text style="margin-left:40rpx;">运营设备故障</text>
+      <text style="color:#969b9e;margin-left:15rpx;">{{data_list.faultCounts}}</text>
+    </view>
+  </view>
+
+  <view class="view3">
+    <van-grid column-num="3" border="flase" >
+      <van-grid-item wx:if="{{info[0].status}}" icon="../../image/dingdan.png"  link-type="navigateTo" url="../order/selecttype/selecttype" text="查询订单" />
+      <van-grid-item wx:if="{{info[1].status}}" icon="../../image/baobiao.png" link-type="navigateTo" url="../report/statistics/statistics" text="报表统计" />
+      <!-- <van-grid-item wx:if="{{info[2].status}}" icon="../../image/keliu.png" text="客流统计" /> -->
+      <van-grid-item wx:if="{{info[3].status}}" icon="../../image/qingjie.png" link-type="navigateTo" url="../clean/index/index" text="清洁" />
+      <van-grid-item wx:if="{{info[4].status}}" icon="../../image/buliao.png"  link-type="navigateTo" url="../equipment/index/index" text="补料" />
+      <van-grid-item wx:if="{{info[5].status}}" icon="../../image/chaobiao.png" link-type="navigateTo" url="../hydropower/index/index" text="水电抄表" /> 
+      <van-grid-item wx:if="{{info[6].status}}" icon="../../image/guzhang.png" link-type="navigateTo" url="../service/index/index" text="故障列表" />
+      <van-grid-item wx:if="{{info[7].status}}" icon="../../image/zhenduan.png" link-type="navigateTo" url="../diagnosis/index/index" text="智能诊断" />
+      <van-grid-item wx:if="{{info[8].status}}" icon="../../image/jiankong.png" link-type="navigateTo"  text="实时监控" />
+      <van-grid-item wx:if="{{info[10].status}}" icon="../../image/shebeipeizhi.png" link-type="navigateTo" url="../equipment/index2/index2" text="设备配置" />
+      <van-grid-item wx:if="{{info[11].status}}" icon="../../image/baobiao.png" link-type="navigateTo" url="../report/kioskMerchant/kioskMerchant" text="对外销售统计" />
+      <van-grid-item wx:if="{{info[12].status}}" icon="../../image/shuiguan.png" link-type="navigateTo" url="../equipment/index3/index3" text="易损件更换" />
+      <van-grid-item wx:if="{{info[13].status}}" icon="../../image/kafeiji.png" link-type="navigateTo" url="../equipment/index4/index4" text="设备固件" />
+    </van-grid>
+  </view>
+

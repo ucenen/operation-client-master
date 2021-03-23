@@ -1,0 +1,27 @@
+/* pages/equipment/abnormal/abnormal.wxss */
+
+.view1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view_item_center {
+  display: flex;
+  align-items: center;
+}
+
+.view2 {
+  width: 30%;
+  height: 60rpx;
+  background: #64c3c7;
+  border-radius: 15rpx;
+  margin-top: 30rpx;
+  margin-left: 35%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:28rpx;
+  
+}

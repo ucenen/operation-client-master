@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设备温度配置",
+  "usingComponents": {
+    "van-popup": "../../../dist/popup/index"
+  }
+}

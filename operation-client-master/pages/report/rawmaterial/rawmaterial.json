@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "原料消耗",
+  "usingComponents": {
+    "van-search": "../../../dist/search/index",
+    "van-dropdown-menu": "../../../dist/dropdown-menu/index",
+    "van-dropdown-item": "../../../dist/dropdown-item/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-popup": "../../../dist/popup/index",
+    "ec-canvas": "../../../ec-canvas/ec-canvas",
+    "van-datetime-picker": "../../../dist/datetime-picker/index"
+  }
+}

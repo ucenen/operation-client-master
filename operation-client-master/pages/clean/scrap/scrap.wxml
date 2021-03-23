@@ -1,0 +1,72 @@
+<view class="view1">
+  <view class="start_time">
+    <text style="font-size:28rpx;">消耗开始时间：</text>
+    <view class="select_time" catchtap="showPopup" data-type="1">
+        <text>{{start_time}}</text>
+        <image src="../../../image/bottom.png" style="margin-left:15rpx;width:40rpx;height:40rpx;margin-top:5rpx;"></image>
+    </view>
+  </view>
+
+  <view class="start_time">
+    <text style="font-size:28rpx;">消耗结束时间：</text>
+    <view class="select_time" catchtap="showPopup" data-type="2">
+        <text>{{end_time}}</text>
+        <image src="../../../image/bottom.png" style="margin-left:15rpx;width:40rpx;height:40rpx;margin-top:5rpx;"></image>
+    </view>
+  </view>
+</view>
+
+<view class="view2">
+    <text>废水量：</text>
+    <input type="digit" class="input1" bindinput="water_change"></input>
+    <text style="font-size:34rpx;">L</text>
+</view>
+
+<view class="view2">
+    <text>废渣量：</text>
+    <input type="digit" class="input1" bindinput="residue_change"></input>
+    <text style="font-size:34rpx;">盒</text>
+</view>
+
+<view class="view2">
+    <text>浪费奶：</text>
+    <input type="digit" class="input1" bindinput="waste_water_change"></input>
+    <text style="font-size:34rpx;">L</text>
+</view>
+
+<view class="view2">
+    <text>浪费水：</text>
+    <input type="digit" class="input1" bindinput="waste_milk_change"></input>
+    <text style="font-size:34rpx;">L</text>
+</view>
+
+<view class="view2">
+    <text>浪费进口有机豆：</text>
+    <input type="digit" class="input1" bindinput="waste_organic_change"></input>
+    <text style="font-size:34rpx;">g</text>
+</view>
+
+<view class="view2">
+    <text>浪费阿拉比卡豆：</text>
+    <input type="digit" class="input1" bindinput="waste_arabica_change"></input>
+    <text style="font-size:34rpx;">g</text>
+</view>
+
+<view class="but" catchtap="enter_scrap" data-url="../bynumber/bynumber">提交</view>
+
+
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="popuponClose">
+
+    <van-datetime-picker
+    type="datetime"
+    value="{{ currentDate }}"
+    max-date="{{ maxDate }}"
+    bind:input="onInput"
+    bind:confirm = "confirm"
+    bind:cancel = "popuponClose"
+    />
+</van-popup>

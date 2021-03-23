@@ -1,0 +1,86 @@
+/* pages/bindingMt/bindingMt.wxss */
+
+.view1{
+  margin-top: 30%;
+  
+}
+
+.text1{
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid #f4f4f4;
+  color: red;
+  font-size: 30rpx;
+}
+
+.input1{
+  margin-top: 50rpx;
+  width: 90%;
+  height: 70rpx;
+  border: 1rpx solid #f4f4f4;
+  border-radius: 10rpx;
+  margin-left: 5%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.input1 text{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #f4f4f4;
+  font-size: 30rpx;
+}
+
+.input1 input{
+  width: 75%;
+  height: 100%;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+}
+
+.input2{
+  margin-top: 50rpx;
+  width: 90%;
+  height: 70rpx;
+  border: 1rpx solid #f4f4f4;
+  border-radius: 10rpx;
+  margin-left: 5%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.input2 text{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #f4f4f4;
+  font-size: 30rpx;
+}
+
+.input2 input{
+  width: 75%;
+  height: 100%;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+}
+
+.buttom1{
+  margin-top: 100rpx;
+  width: 50%;
+  height: 70rpx;
+  margin-left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #409EFF;
+  color: #ffffff;
+}

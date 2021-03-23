@@ -1,0 +1,18 @@
+<van-cell
+  is-link
+  title="异常记录"
+  link-type="navigateTo"
+  url="../abnormal/abnormal"
+/>
+<van-cell
+  is-link
+  title="运维记录"
+  link-type="navigateTo"
+  url="../record/record"
+/>
+<van-cell
+  is-link
+  title="废料记录"
+  link-type="navigateTo"
+  url="../../clean/statistics/statistics"
+/>

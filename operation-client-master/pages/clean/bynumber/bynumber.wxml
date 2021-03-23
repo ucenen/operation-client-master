@@ -1,0 +1,21 @@
+<van-cell title="设备编号" value="{{clean_equipment.return_msg.eqNumber}}" />
+<van-cell title="设备状态">
+      <text wx:if="{{clean_equipment.return_msg.eqOMS == 1}}" >正常</text>
+      <text wx:if="{{clean_equipment.return_msg.eqOMS == 2}}" >故障</text>
+      <text wx:if="{{clean_equipment.return_msg.eqOMS == 3}}" >缺料</text>
+</van-cell>
+<view class="view1">
+  <text style="margin-left:30rpx;font-size:28rpx;margin-top:30rpx;">选择已清洁选项</text>
+</view>
+
+<view class="view1">
+   <view class="view1_select_all" catchtap="select_all" style="{{select_all ? 'background:#64c3c7;color:#ffffff;':''}}">{{select_all?'已全选':' 全选'}}</view>
+</view>
+
+<view class="view1">
+   <view wx:for="{{arr}}" wx:key="" class="view1_select_all" style="{{arr[index].status ? 'background:#64c3c7;color:#ffffff;':''}}" catchtap="update" data-index="{{index}}">{{item.name}}</view>
+
+</view>
+
+
+<view class="but" catchtap="cleaning_ok" data-url="../orderdetail/orderdetail">提交</view>

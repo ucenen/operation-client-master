@@ -1,0 +1,45 @@
+<view class="view1">
+  <text style="font-size:28rpx;">{{eqNumber}}</text>
+</view>
+
+<view class="view2" wx:for="{{tempJsonArr}}" wx:key="" >
+  <view style="width:100%;height:70rpx;font-size:34rpx;" class="view_center">{{item.descr}}</view>
+  <view style="width:100%;height:50rpx;color:#28ab45;font-size:26rpx;" class="view_center">位置标识：{{item.type}}</view>
+  <view style="width:100%;height:45rpx;font-size:26rpx;color:#e60011;" class="view_center">温度告警值：{{item.alarmValue==null?'':item.alarmValue}}度</view>
+  <view style="width:100%;height:45rpx;font-size:26rpx;color:#e60011;" class="view_center">湿度告警值：{{item.humidityAlarmValue==null?'':item.humidityAlarmValue+'%'}}</view>
+  <view style="width:100%;height:45rpx;color:#b4ad1e;font-size:26rpx;" class="view_center">温度停售值：{{item.discontinuedValue==null?'':item.discontinuedValue}}度</view>
+  <view style="width:100%;height:45rpx;color:#0000FF;font-size:26rpx;" class="view_center">贮藏温度：{{item.range1==null?'':item.range1}}</view>
+  <view style="width:100%;height:45rpx;color:#0000FF;font-size:26rpx;" class="view_center">正常湿度：{{item.range2==null?'':item.range2}}</view>
+  <!-- <view style="width:80%;height:45rpx;margin-left:10%;background:#909399;border-radius:10rpx;color:#ffffff;font-size:28rpx;margin-top:10rpx;" catchtap=""  class="view_center">重置物料</view> -->
+  <view class="options">
+    <view style="width:40%;height:45rpx;background:#909399;border-radius:10rpx;color:#ffffff;font-size:28rpx;line-height:45rpx;" catchtap="openpopup"  class="view_center" data-item="{{item}}">修改</view>
+  </view>
+</view>
+
+<view style="float: left;width:100%;height:50rpx;"></view>
+
+<van-popup show="{{showFlag}}"  custom-style="height: 600rpx;width:80%;border-radius:30rpx;" duration="0" bind:close="onClose" closeable="{{true}}">
+  <view style="width:100%;height:60rpx;margin-top:40rpx;" class="view_center">
+    <text>{{select_item.descr}}</text>
+  </view>
+  <view style="width:100%;height:60rpx;margin-top:30rpx;" class="view_center">
+    <text style="font-size:28rpx;">位置标识</text>
+    <input type="number" class="input1" value="{{select_item.type}}"  bindinput="type_change"></input>
+  </view>
+  <view style="width:100%;height:60rpx;margin-top:30rpx;" class="view_center">
+    <text style="font-size:28rpx;">温度告警值</text>
+    <input type="number" class="input1" value="{{select_item.alarmValue == null ? '' :select_item.alarmValue}}"  bindinput="alarm_change"></input>
+    <text style="color:#e60011;margin-left:15rpx;">度</text>
+  </view>
+  <view style="width:100%;height:60rpx;margin-top:30rpx;" class="view_center">
+    <text style="font-size:28rpx;">湿度告警值</text>
+    <input type="number" class="input1" value="{{select_item.humidityAlarmValue == null ? '' :select_item.humidityAlarmValue}}"  bindinput="humidity_alarm_change"></input>
+    <text style="color:#e60011;margin-left:15rpx;">%</text>
+  </view>
+  <view style="width:100%;height:60rpx;margin-top:30rpx;" class="view_center">
+    <text style="font-size:28rpx;">温度停售值</text>
+    <input type="number" class="input1" value="{{select_item.discontinuedValue == null ? '' :select_item.discontinuedValue}}" bindinput="discontinued_change"></input>
+    <text style="color:#b4ad1e;margin-left:15rpx;">度</text>
+  </view>
+  <view catchtap="edit_temp" style="width:80%;height:70rpx;background:#64c3c7;color:#ffffff;border-radius:15rpx;margin-left:10%;margin-top:50rpx;" class="view_center">确定</view>
+</van-popup>

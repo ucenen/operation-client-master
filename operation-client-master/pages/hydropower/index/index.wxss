@@ -1,0 +1,56 @@
+/* pages/clean/index/index.wxss */
+.input_text{
+  float: left;
+  width: 75%;
+  height: 80rpx;
+  margin-left: 4%;
+  font-size: 30rpx;
+}
+
+.but{
+  float: left;
+  width: 90%;
+  height: 80rpx;
+  margin-left: 5%;
+  color: #ffffff;
+  background-color: #64c3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15rpx;
+  margin-top: 50rpx;
+}
+
+.view1{
+  margin-top: 30rpx;
+  width: 92%;
+  height: 80rpx;
+  margin-left: 4%;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.select_time{
+  margin-top: 30rpx;
+  width: 92%;
+  height: 60rpx;
+  margin-left: 4%;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 28rpx;
+  border-radius: 15rpx;
+}
+
+.sousuo{
+  width: 92%;
+  height: 300rpx;
+  overflow: auto;
+  margin-left: 4%;  
+  border: 1px solid #eee;
+  border-top: 0px solid #ffffff;
+  font-size: 30rpx;
+}

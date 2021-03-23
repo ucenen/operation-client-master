@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "查询结果",
+  "onReachBottomDistance":30,
+  "usingComponents": {
+      "van-collapse": "../../../dist/collapse/index",
+      "van-collapse-item": "../../../dist/collapse-item/index",
+      "van-dropdown-menu": "../../../dist/dropdown-menu/index",
+      "van-dropdown-item": "../../../dist/dropdown-item/index",
+      "van-cell": "../../../dist/cell/index",
+      "van-cell-group": "../../../dist/cell-group/index",
+      "van-swipe-cell": "../../../dist/swipe-cell/index",
+      "van-action-sheet": "../../../dist/action-sheet/index"
+  }
+}

@@ -1,0 +1,88 @@
+<van-search
+  value="{{ eqNumber }}"
+  placeholder="请输入设备编号"
+  bind:focus="onclick"
+  use-action-slot
+  bind:change="eqNumber_change"
+>
+  <view slot="action" bind:tap="getdata">搜索</view>
+</van-search>
+<view wx:if="{{result_status}}" class="sousuo">
+  <view wx:for="{{result}}" wx:key="" catchtap="select_item" data-item="{{item}}" style="width:100%;height:80rpx;display:flex;align-items: center;border-bottom:1px solid #eeeeee;overflow: auto;">
+    <text  style="margin-left:20rpx;font-size:28rpx;">{{item}}</text>
+  </view>
+</view>
+
+<!-- <van-cell title="商户名称" border="{{true}}">
+  <view style="float:right; height:60rpx;margin-right:20rpx;" class="view1">
+    <van-dropdown-menu >
+      <van-dropdown-item bind:change="dropdownchange" value="{{ value1 }}" options="{{ option1 }}" />        
+    </van-dropdown-menu>
+  </view>
+</van-cell> -->
+
+
+<view class="view2">
+  <view class="view2_item">
+    <view style="{{select_time=='1'?'color:#ffffff;background:#64c3c7;':''}}" catchtap="select_time" data-item="1" class="item1">今天</view>
+    <view style="{{select_time=='2'?'color:#ffffff;background:#64c3c7;':''}}" catchtap="select_time" data-item="2" class="item1">最近7天</view>
+    <view style="{{select_time=='3'?'color:#ffffff;background:#64c3c7;':''}}" catchtap="select_time" data-item="3" class="item2">最近30天</view>
+  </view>
+</view>
+
+<view class="view3">
+  <text style="float:left;line-height:70rpx;font-size:28rpx;">日期选择：</text>
+  <view class="view3_item">
+    <text catchtap="showPopup" data-type="1">{{start_time}}</text>
+    <text>-</text>
+    <text catchtap="showPopup" data-type="2">{{end_time}}</text>
+  </view>
+</view>
+
+<view class="view6">
+<view class="view4">
+  <view class="view4_item">
+    <view class="view4_item2" style="font-size: 32rpx;">主料</view>
+    <view style="float:left;width:50%;height:100%;display: flex;justify-content: center;align-items: center;font-size: 32rpx;">数量</view>
+  </view>
+  <view class="view4_item" style="background:#ffffff;color:#000000;" wx:for="{{data_list.dataList1}}" wx:key="">
+    <view class="view4_item2">{{item.mtName}}</view>
+    <view class="view4_item3">{{item.consumption}}{{item.unit}}</view>
+  </view>
+</view>
+
+<view class="view5">
+  <view class="view4_item">
+    <view class="view4_item2" style="font-size: 32rpx;">辅料</view>
+    <view style="float:left;width:50%;height:100%;display: flex;justify-content: center;align-items: center;font-size: 32rpx;">数量</view>
+  </view>
+  <view class="view4_item" style="background:#ffffff;color:#000000;" wx:for="{{data_list.dataList2}}" wx:key="">
+    <view class="view4_item2">{{item.mtName}}</view>
+    <view class="view4_item3">{{item.consumption}}{{item.unit}}</view>
+  </view>
+</view>
+
+</view>
+
+<view class="chart1">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="chart2">
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line2" ec="{{ bc }}"></ec-canvas>
+</view>
+
+
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="onClose">
+    <van-datetime-picker
+      type="date"
+      value="{{ currentDate }}"  
+      max-date="{{ maxDate }}"    
+      bind:confirm = "confirm"
+      bind:cancel = "onClose"    
+    />
+</van-popup>
